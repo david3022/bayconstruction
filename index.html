@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bay Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <link rel="shortcut icon" href="./favicon1.png" type="image/x-icon">
+    <style>
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .carousel-item {
+            transition: transform 0.6s ease;
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Header with transparent background -->
+    <header class="fixed w-full bg-transparent z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="./logo.png" alt="The Bay Construction Logo" class="h-24">
+            </div>
+            <!-- <div class="flex items-center">
+                <img src="https://via.placeholder.com/150x50?text=TheBayConstruction" alt="The Bay Construction Logo" class="h-10">
+            </div> -->
+
+            <!-- Navbar -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li>
+                        <a href="#projects" class="text-white hover:text-gray-300 font-medium"
+                            style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);">
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" class="text-white hover:text-gray-300 font-medium"
+                            style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="text-white hover:text-gray-300 font-medium"
+                            style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <!-- <section class="relative h-[60vh] bg-cover bg-center flex items-center" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"> -->
+    <section class="relative h-[60vh] bg-cover bg-center flex items-center"
+        style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+
+        <!-- Overlay oscuro -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <!-- Contenido visible -->
+        <div class="container mx-auto px-4 z-10 text-white relative">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Building Your Dreams</h1>
+            <p class="text-xl md:text-2xl max-w-2xl">Quality construction services...</p>
+        </div>
+    </section>
+
+
+    <!-- Three Images Section -->
+    <section class="py-16 container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="fade-in">
+                <!-- <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80" alt="Construction 1" class="w-full h-[30vh] object-cover rounded-lg">-->
+                <img src="./Borrador.png" alt="Construction 1" class="w-full h-[30vh] object-cover rounded-lg">
+            </div>
+            <div class="fade-in" style="animation-delay: 0.3s;">
+                <!-- <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80" alt="Construction 2" class="w-full h-[30vh] object-cover rounded-lg"> -->
+
+                <img src="./Borrador (1).png" alt="Construction 2" class="w-full h-[30vh] object-cover rounded-lg">
+            </div>
+            <div class="fade-in" style="animation-delay: 0.6s;">
+                <!-- <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=300&q=80" alt="Construction 3" class="w-full h-[30vh] object-cover rounded-lg"> -->
+                <img src="./Borrador (2).png" alt="Construction 3" class="w-full h-[30vh] object-cover rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">We are working for you</h2>
+
+            <div class="relative overflow-hidden">
+                <div id="carousel" class="flex space-x-4 transition-transform duration-500">
+                    <div class="carousel-item flex-shrink-0 w-[300px] h-[40vh]">
+                        <!-- <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Project 1" class="w-full h-full object-cover rounded-lg"> -->
+                        <img src="./building.png" alt="Project 1" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-[300px] h-[40vh]">
+                        <!-- <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Project 2" class="w-full h-full object-cover rounded-lg"> -->
+                        <img src="./house.png" alt="Project 2" class="w-full h-full object-cover rounded-lg">
+
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-[300px] h-[40vh]">
+                        <!-- <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Project 3" class="w-full h-full object-cover rounded-lg"> -->
+                        <img src="./workers.png" alt="Project 3" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-[300px] h-[40vh]">
+                        <!-- <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Project 4" class="w-full h-full object-cover rounded-lg"> -->
+                        <img src="./buildings.png" alt="Project 4" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-[300px] h-[40vh]">
+                        <!-- <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Project 5" class="w-full h-full object-cover rounded-lg"> -->
+                        <img src="./banner2.png" alt="Project 5" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+
+                <button id="prevBtn"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button id="nextBtn"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">About Us</h2>
+            <p class="text-lg text-gray-700">
+                The Bay Construction is a premier construction company with over two decades of experience in
+                residential and commercial projects.
+                Our team of skilled professionals is dedicated to delivering high-quality craftsmanship, innovative
+                designs, and exceptional customer service.
+                We take pride in our attention to detail and commitment to completing projects on time and within
+                budget.
+            </p>
+        </div>
+    </section>
+
+    <!-- Two Images Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Construction Team" class="w-full h-[40vh] object-cover rounded-lg">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&h=400&q=80" alt="Construction Site" class="w-full h-[40vh] object-cover rounded-lg"> -->
+            <img src="./workers.png" alt="Construction Team" class="w-full h-[40vh] object-cover rounded-lg">
+            <img src="./architect.png" alt="Construction Site" class="w-full h-[40vh] object-cover rounded-lg">
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 container mx-auto px-4">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+
+            <form id="contact-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-gray-700 mb-2">Your Message</label>
+                    <textarea id="message" name="message" rows="4"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition duration-300">Send
+                    Message</button>
+
+                <div id="success-message" class="hidden p-4 bg-green-100 text-green-700 rounded-md">
+                    Thank you for your message! We'll get back to you soon.
+                </div>
+
+                <div id="error-message" class="hidden p-4 bg-red-100 text-red-700 rounded-md">
+                    There was an error sending your message. Please try again later.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Final Image Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&h=500&q=80" alt="Construction Final" class="w-full h-[50vh] object-cover rounded-lg"> -->
+            <img src="./4images.png" alt="Construction Final" class="w-full h-[50vh] object-cover rounded-lg">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <p>Copyright © 2025 The Bay Construction - All Rights Reserved.</p>
+                </div>
+
+                <div class="flex justify-center">
+                    <!-- <img src="https://via.placeholder.com/100x50?text=Logo1" alt="Logo 1" class="h-10"> -->
+                     <img src="./favicon1.png" alt="Logo 1" class="h-10">
+                </div>
+
+                <div class="flex justify-center md:justify-end">
+                    <!-- <img src="https://via.placeholder.com/100x50?text=Logo2" alt="Logo 2" class="h-10"> -->
+                     <img src="./construction-sign.png" alt="Logo 2" class="h-10">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize EmailJS
+        (function () {
+            emailjs.init('lboObDjrbWitl6DVa');
+        })();
+
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const form = this;
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            // Send form data using EmailJS with the correct template_id
+            emailjs.sendForm('default_service', 'template_i559vub', form)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    successMessage.classList.remove('hidden');
+                    errorMessage.classList.add('hidden');
+                    form.reset();
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    successMessage.classList.add('hidden');
+                    errorMessage.classList.remove('hidden');
+                });
+        });
+
+        // Carousel functionality
+        let currentIndex = 0;
+        const carousel = document.getElementById('carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const itemWidth = 300; // Width of each item including margin
+        const totalItems = items.length;
+
+        document.getElementById('nextBtn').addEventListener('click', function () {
+            if (currentIndex < totalItems - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', function () {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        function updateCarousel() {
+            const offset = -currentIndex * itemWidth;
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Mobile menu toggle (placeholder functionality)
+        document.querySelector('header button').addEventListener('click', function () {
+            alert('Mobile menu would open here');
+        });
+    </script>
+</body>
+
+</html>
